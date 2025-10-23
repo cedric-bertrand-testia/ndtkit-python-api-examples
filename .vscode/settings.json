@@ -1,0 +1,25 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true,
+  },
+  "autopep8.args": [
+    "--max-line-length=150"
+  ],
+  "files.exclude": {
+    "**/__pycache__": true,
+    "venv/": true,
+  },
+  "debug.inlineValues": "on",
+  "cSpell.words": [
+    "bscan",
+    "cscan",
+    "dscan",
+    "echodynamic",
+    "NKAP",
+    "pypi",
+    "pyproject",
+    "sdist",
+    "testpypi"
+  ]
+}
