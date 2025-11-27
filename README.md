@@ -14,7 +14,7 @@ This repository provides **usage examples** for the Python API designed to inter
 ### Prerequisites
 
 1.  **Python 3.11+**
-2.  **NDTkit** installed and launched
+2.  **NDTkit 4.1+** installed and launched
 
 ### Installation
 
