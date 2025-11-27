@@ -20,6 +20,7 @@
     "pypi",
     "pyproject",
     "sdist",
-    "testpypi"
+    "testpypi",
+    "thresholding"
   ]
 }
