@@ -16,10 +16,12 @@
     "cscan",
     "dscan",
     "echodynamic",
+    "ndtkit",
     "NKAP",
     "pypi",
     "pyproject",
     "sdist",
+    "TESTIA",
     "testpypi",
     "thresholding"
   ]
