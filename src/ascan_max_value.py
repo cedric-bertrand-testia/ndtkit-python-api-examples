@@ -8,15 +8,15 @@ if __name__ == "__main__":
     # Open the A-Scan file
     ascan_frame = NDTKitAScanInterface.open_ascan(input_ascan_path, 0)
 
-    # Get the number of rows in the A-Scan frame
-    row_count = ascan_frame.get_row_number()
+    # Get the number of rows and columns in the A-Scan frame
+    row_count = ascan_frame.get_row_count()
+    col_count = ascan_frame.get_column_count()
+
+    # Get all amplitude values for the entire A-Scan frame
+    tof_amp_values = ascan_frame.get_row_tof_amp(row_count - 1, col_count - 1)
+
+    # Calculate the maximum amplitude value across all A-Scans in the frame
+    max_val = max((max(ascan[1]) for line in tof_amp_values for ascan in line if len(ascan[1]) > 0), default=0)
 
     # Find the maximum amplitude value in the A-Scan data
-    max_value = float('-inf')
-    for row in range(row_count):
-        ascans_row = ascan_frame.get_row(row)
-        for ascan in ascans_row:
-            data = ascan.get_amp_values()
-            max_value = max(max_value, max(data))
-    print(f"Maximum amplitude value in the A-Scan data: {max_value}")
-
+    print(f"Maximum amplitude value in the A-Scan data: {max_val}")

@@ -21,7 +21,7 @@ def get_first_ascan_frame(file_path: str) -> NICartographyFrameAScan | None:
         return NDTKitAScanInterface.open_ascan(file_path)
     else:
         for node in nodes:
-            if node.get_scan_type() == NIEnumScanType.ASCAN:
+            if node.get_scan_type() == NIEnumScanType.ASCAN or node.get_scan_type() == NIEnumScanType.ASCAN_MULTIPIC or node.get_scan_type() == NIEnumScanType.ASCAN_SYNTHETIC:
                 return NDTKitAScanInterface.open_ascan(file_path, node.get_node_id())
     return None
 
@@ -29,7 +29,7 @@ def get_first_ascan_frame(file_path: str) -> NICartographyFrameAScan | None:
 if __name__ == "__main__":
     ascan = get_first_ascan_frame(input_acquisition_path)
     if ascan:
-        print(f"Column number: {ascan.get_column_number()}")
-        print(f"Row number: {ascan.get_row_number()}")
+        print(f"Column number: {ascan.get_column_count()}")
+        print(f"Row number: {ascan.get_row_count()}")
     else:
         print("No A-Scan found in the file.")
